@@ -1,3 +1,7 @@
+set -g __fish_git_prompt_showdirtystate 'yes'
+set -g __fish_git_prompt_char_dirtystate '✖'
+set -g __fish_git_prompt_char_cleanstate '✔'
+
 function fish_prompt
     if not set -q VIRTUAL_ENV_DISABLE_PROMPT
         set -g VIRTUAL_ENV_DISABLE_PROMPT true
@@ -17,7 +21,8 @@ function fish_prompt
     set_color normal
 
     set_color yellow
-    echo -n (fish_vcs_prompt)
+  #echo -n (fish_vcs_prompt)
+    printf '%s' (fish_vcs_prompt)
     set_color normal
 
     # Line 2
