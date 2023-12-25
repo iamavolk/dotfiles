@@ -49,6 +49,7 @@ alias rst_screenshot='gsettings set org.gnome.gnome-flashback.keybindings screen
 rst_screenshot
 
 alias asic='cd ~/Desktop/_EECS151/Labs/ASIC/'
+set fish_prompt_pwd_dir_length 0
 
 
 # -------------
