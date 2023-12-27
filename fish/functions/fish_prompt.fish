@@ -8,15 +8,16 @@ function fish_prompt
     if not set -q VIRTUAL_ENV_DISABLE_PROMPT
         set -g VIRTUAL_ENV_DISABLE_PROMPT true
     end
-    set_color magenta
-    printf '%s' $USER
-    printf 'vlkv'
+    set_color brmagenta
+    # printf '%s' $USER
+    printf ' vlkv'
     set_color normal
 
-    #printf ' at '
-    #set_color magenta
-    #  echo -n (prompt_hostname)
-    #  set_color normal
+    printf ' @ '
+    set_color yellow
+    #echo -n (prompt_hostname)
+    printf 'e14'
+    set_color normal
 
     printf ' in '
 
