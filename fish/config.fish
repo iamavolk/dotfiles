@@ -1,14 +1,16 @@
 neofetch
 ncal -b3
 
+alias l='eza -lxS'
+alias ll='l -A'
 #alias connect-151-14='ssh eecs151-adi@c111-14.eecs.berkeley.edu'
 #alias connect-151-15='ssh eecs151-adi@c111-15.eecs.berkeley.edu'
 #alias connect-151-16='ssh eecs151-adi@c111-16.eecs.berkeley.edu'
 #alias enter-151-proj='nvim scp://eecs151-adi@c111-16.eecs.berkeley.edu//home/cc/eecs151/sp23/class/eecs151-adi/fpga_project_sp23-bear_the_risc/hardware/src/'
 alias vagrant='ssh vagrant@127.0.0.1 -p 16222 -XY'
-alias ll='ls -alhF'
-alias la='ls -A'
-alias l='ls -lh'
+#alias ll='ls -alhF'
+#alias la='ls -A'
+#alias l='ls -lh'
 alias 151='cd ~/Desktop/_EECS151/'
 alias 189='cd ~/Desktop/_CS189/'
 alias 162='cd ~/Desktop/_CS162/'
