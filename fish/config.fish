@@ -21,6 +21,11 @@ alias 161='cd ~/Desktop/CS161/'
 alias 169='cd ~/Desktop/CS169/'
 alias nv='~/Downloads/nvim-linux64/bin/nvim'
 
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+
 set -U fish_greeting
 
 if status is-interactive
