@@ -39,6 +39,7 @@ alias rst_screenshot='gsettings set org.gnome.gnome-flashback.keybindings screen
 rst_screenshot
 
 source ~/dotfiles/fish/aux.fish
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 neofetch
 ncal -b3
