@@ -10,6 +10,7 @@ alias gc='git commit'
 alias gd='git diff'
 
 set -U fish_greeting
+set -Ux EDITOR /opt/nvim-linux64/bin/nvim
 set fish_prompt_pwd_dir_length 0
 
 if status is-interactive
@@ -33,12 +34,15 @@ set -U*x* LESS_TERMCAP_so \e\[01\x3B33m
 set -U*x* LESS_TERMCAP_ue \e\[0m
 set -U*x* LESS_TERMCAP_us \e\[1\x3B4\x3B31m
 
-alias vagrant='ssh vagrant@127.0.0.1 -p 16222 -XY'
+#alias vagrant='ssh vagrant@127.0.0.1 -p 16222 -XY'
 # reset gnome-settings screenshot
-alias rst_screenshot='gsettings set org.gnome.gnome-flashback.keybindings screenshot []; gsettings reset org.gnome.gnome-flashback.keybindings screenshot'
-rst_screenshot
+#alias rst_screenshot='gsettings set org.gnome.gnome-flashback.keybindings screenshot []; gsettings reset org.gnome.gnome-flashback.keybindings screenshot'
+#rst_screenshot
+alias g_mount='rclone mount gdrive: /home/ke314/gdrive &'
+alias g_umount='fusermount -u /home/ke314/gdrive'
+alias z='zathura $1 --fork'
 
-source ~/dotfiles/fish/aux.fish
+#source ~/dotfiles/fish/aux.fish
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 neofetch
