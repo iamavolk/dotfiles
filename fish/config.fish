@@ -1,7 +1,7 @@
 # Minimalist fish config
 
-alias l='eza -lxS'
-alias ll='l -A'
+alias l='eza -lbS'
+alias ll='eza -aablGS'
 alias nv='nvim'
 
 alias gs='git status'
@@ -10,7 +10,7 @@ alias gc='git commit'
 alias gd='git diff'
 
 set -U fish_greeting
-set -Ux EDITOR /opt/nvim-linux64/bin/nvim
+set -Ux EDITOR nvim
 set fish_prompt_pwd_dir_length 0
 
 if status is-interactive
@@ -25,7 +25,7 @@ end
 # rbenv fish integration
 # status --is-interactive; and ~/.rbenv/bin/rbenv init - fish | source
 
-# less (pager) colors
+# less pager colors
 set -U*x* LESS_TERMCAP_mb \e\[1\x3B32m
 set -U*x* LESS_TERMCAP_md \e\[1\x3B32m
 set -U*x* LESS_TERMCAP_me \e\[0m
@@ -43,7 +43,10 @@ alias g_umount='fusermount -u /home/ke314/gdrive'
 alias z='zathura $1 --fork'
 
 #source ~/dotfiles/fish/aux.fish
-export PATH="$PATH:/opt/nvim-linux64/bin"
+#export PATH="$PATH:/opt/nvim-linux64/bin"
+
+set -gx MANWIDTH 120 # manpages width
+set -gx LESS '-N'    # always line numbers in less
 
 neofetch
 ncal -b3
