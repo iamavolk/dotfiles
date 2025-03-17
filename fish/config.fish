@@ -1,4 +1,4 @@
-# Minimalist fish config
+# Minimal fish config
 
 alias l='eza -lbS'
 alias ll='eza -aablGS'
@@ -9,6 +9,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 
+
 set -U fish_greeting
 set -Ux EDITOR nvim
 set fish_prompt_pwd_dir_length 0
@@ -17,36 +18,25 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# Ruby config, not sure if will use outside of container. Candidate for deletion
-# RVM is a Ruby version manager
-# export PATH="$PATH:$HOME/.rvm/bin"
-# RVM for fish
-# rvm default
-# rbenv fish integration
-# status --is-interactive; and ~/.rbenv/bin/rbenv init - fish | source
 
-# less pager colors
-set -U*x* LESS_TERMCAP_mb \e\[1\x3B32m
-set -U*x* LESS_TERMCAP_md \e\[1\x3B32m
-set -U*x* LESS_TERMCAP_me \e\[0m
-set -U*x* LESS_TERMCAP_se \e\[0m
-set -U*x* LESS_TERMCAP_so \e\[01\x3B33m
-set -U*x* LESS_TERMCAP_ue \e\[0m
-set -U*x* LESS_TERMCAP_us \e\[1\x3B4\x3B31m
+# less colors and format
+#set -Ux LESS_TERMCAP_mb \e\[1\x3B32m
+#set -Ux LESS_TERMCAP_md \e\[1\x3B32m
+#set -Ux LESS_TERMCAP_me \e\[0m
+#set -Ux LESS_TERMCAP_se \e\[0m
+#set -Ux LESS_TERMCAP_so \e\[01\x3B33m
+#set -Ux LESS_TERMCAP_ue \e\[0m
+#set -Ux LESS_TERMCAP_us \e\[1\x3B4\x3B31m
+#set -Ux MANPAGER "less -R"
+#set -Ux MANROFFOPT "-c"
 
-#alias vagrant='ssh vagrant@127.0.0.1 -p 16222 -XY'
-# reset gnome-settings screenshot
-#alias rst_screenshot='gsettings set org.gnome.gnome-flashback.keybindings screenshot []; gsettings reset org.gnome.gnome-flashback.keybindings screenshot'
-#rst_screenshot
-alias g_mount='rclone mount gdrive: /home/ke314/gdrive &'
-alias g_umount='fusermount -u /home/ke314/gdrive'
 alias z='zathura $1 --fork'
+alias nvim-new='NVIM_APPNAME="nvim-new" nvim'
 
-#source ~/dotfiles/fish/aux.fish
-#export PATH="$PATH:/opt/nvim-linux64/bin"
+source ~/dotfiles/fish/aux.fish
 
-set -gx MANWIDTH 120 # manpages width
-set -gx LESS '-N'    # always line numbers in less
+# manpages width
+set -gx MANWIDTH 120
 
 neofetch
 ncal -b3
