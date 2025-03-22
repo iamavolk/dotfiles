@@ -37,6 +37,7 @@ source ~/dotfiles/fish/aux.fish
 
 # manpages width
 set -gx MANWIDTH 120
+set -Ux BAT_THEME base16
 
 neofetch
 ncal -b3
