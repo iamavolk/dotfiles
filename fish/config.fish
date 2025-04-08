@@ -1,5 +1,3 @@
-# Minimal fish config
-
 alias l='eza -lbS'
 alias ll='eza -aablGS'
 alias lt='eza -blT --no-user --no-time --no-permissions'
@@ -18,7 +16,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 # less colors and format
 #set -Ux LESS_TERMCAP_mb \e\[1\x3B32m
 #set -Ux LESS_TERMCAP_md \e\[1\x3B32m
@@ -36,10 +33,24 @@ alias vi='NVIM_APPNAME="nvim-new" nvim'
 
 source ~/dotfiles/fish/aux.fish
 
+function gdrive
+    set action $argv[1]
+    set mnt_pnt "/home/ke314/gdrive"
+    set remote_drive "gdrive:"
+
+    switch $action
+        case "mount"
+            rclone mount "$remote_drive" "$mnt_pnt" &
+        case "umount"
+            fusermount -u "$mnt_pnt"
+    end
+end
+
 # manpage width
 set -gx MANWIDTH 120
 set -Ux BAT_THEME base16
 
+#  TODO: fix later
 set -Ux EDITOR vi
 set -Ux SUDO_EDITOR vi
 
