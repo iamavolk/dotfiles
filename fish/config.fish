@@ -2,6 +2,7 @@
 
 alias l='eza -lbS'
 alias ll='eza -aablGS'
+alias lt='eza -blT --no-user --no-time --no-permissions'
 alias nv='nvim'
 
 alias gs='git status'
@@ -11,7 +12,6 @@ alias gd='git diff'
 
 
 set -U fish_greeting
-set -Ux EDITOR nvim
 set fish_prompt_pwd_dir_length 0
 
 if status is-interactive
@@ -32,12 +32,16 @@ end
 
 alias z='zathura $1 --fork'
 alias nvim-new='NVIM_APPNAME="nvim-new" nvim'
+alias vi='NVIM_APPNAME="nvim-new" nvim'
 
 source ~/dotfiles/fish/aux.fish
 
-# manpages width
+# manpage width
 set -gx MANWIDTH 120
 set -Ux BAT_THEME base16
+
+set -Ux EDITOR vi
+set -Ux SUDO_EDITOR vi
 
 neofetch
 ncal -b3

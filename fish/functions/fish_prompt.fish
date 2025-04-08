@@ -1,8 +1,8 @@
 set -g __fish_git_prompt_showdirtystate 'yes'
 # set -g __fish_git_prompt_char_dirtystate '✖'
 # set -g __fish_git_prompt_char_dirtystate '| ×'
-set -g __fish_git_prompt_char_dirtystate '|✗'
-set -g __fish_git_prompt_char_cleanstate '|✔'
+set -g __fish_git_prompt_char_dirtystate '|✗ '
+set -g __fish_git_prompt_char_cleanstate '|✔ '
 
 function fish_prompt
     if not set -q VIRTUAL_ENV_DISABLE_PROMPT
@@ -10,7 +10,7 @@ function fish_prompt
     end
     set_color brmagenta
     # printf '%s' $USER
-    printf ' vlkv'
+    printf ' iamavolk'
     set_color normal
 
     printf ' @ '
@@ -35,6 +35,7 @@ function fish_prompt
     if test -n "$VIRTUAL_ENV"
         printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
     end
-    printf '↪ '
-    set_color normal
+    set_color green
+    printf ' (󰘧) '
+    #printf '↪  󰘧 '
 end

@@ -59,7 +59,7 @@ mods = "Control|Shift"
 [selection]
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 
 [window]
