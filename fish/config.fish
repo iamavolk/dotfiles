@@ -1,4 +1,4 @@
-alias l='eza -lbS'
+alias l='eza -lbS --git'
 alias ll='eza -aablGS'
 alias lt='eza -blT --no-user --no-time --no-permissions'
 
@@ -47,3 +47,5 @@ set -Ux SUDO_EDITOR vi
 
 neofetch
 ncal -b3
+
+xmodmap -e "keycode 107 = BackSpace"
