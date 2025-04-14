@@ -1,4 +1,5 @@
 alias l='eza -lbS --git'
+alias la='l -a'
 alias ll='eza -aablGS'
 alias lt='eza -blT --no-user --no-time --no-permissions'
 
@@ -49,3 +50,4 @@ neofetch
 ncal -b3
 
 xmodmap -e "keycode 107 = BackSpace"
+xmodmap -e "keycode 22 = NoSymbol"
