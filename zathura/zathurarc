@@ -1,2 +1,17 @@
 set default-bg rgba(0,0,0,0.3)
 set statusbar-bg rgba(0,0,0,0.5)
+
+# <C-r> to toggle recolor
+set recolor             true
+set recolor-keephue     true
+
+# Canvas colors
+set recolor-lightcolor "#bda99b"
+set recolor-darkcolor "#3c3830"
+
+# Status Line colors
+set statusbar-fg "#bda99b"
+set statusbar-bg "#3c3830"
+
+# Nice font
+set font "Ubuntu Mono Nerd Font Bold 10"
