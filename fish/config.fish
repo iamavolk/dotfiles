@@ -24,7 +24,8 @@ set -Ux LESS_TERMCAP_so \e\[01\x3B33m
 set -Ux LESS_TERMCAP_ue \e\[0m
 set -Ux LESS_TERMCAP_us \e\[1\x3B4\x3B31m
 
-alias z='zathura $1 --fork'
+# alias z='zathura $1 --fork'
+alias z='LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu zathura --fork'
 
 source ~/dotfiles/fish/aux.fish
 
@@ -51,3 +52,4 @@ ncal -b3
 
 xmodmap -e "keycode 107 = BackSpace"
 xmodmap -e "keycode 22 = NoSymbol"
+

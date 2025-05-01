@@ -1,2 +1,3 @@
 fish/aux.fish
 fish/fish_variables
+fish/functions/fish_prompt.fish

@@ -15,3 +15,7 @@ set statusbar-bg "#3c3830"
 
 # Nice font
 set font "Ubuntu Mono Nerd Font Bold 10"
+
+set selection-clipboard clipboard
+
+set database "sqlite"
