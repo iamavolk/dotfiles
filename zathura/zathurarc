@@ -10,12 +10,17 @@ set recolor-lightcolor "#bda99b"
 set recolor-darkcolor "#3c3830"
 
 # Status Line colors
-set statusbar-fg "#bda99b"
-set statusbar-bg "#3c3830"
+# set statusbar-fg "#bda99b"
+# set statusbar-bg "#3c3830"
+set statusbar-fg "#c3c3c3"
+set statusbar-bg "#3b4252"
+set statusbar-home-tilde true
 
-# Nice font
-set font "Ubuntu Mono Nerd Font Bold 10"
-
+set font "Ubuntu Mono Nerd Font 10"
 set selection-clipboard clipboard
-
 set database "sqlite"
+
+# Index menu (<Tab>)
+set index-bg "#242933"
+set index-active-bg "#3b4252"
+set index-active-fg "#c3c3c3"
