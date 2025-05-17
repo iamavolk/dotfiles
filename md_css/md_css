@@ -1,0 +1,7 @@
+article {
+  background: #1d2027;
+}
+
+article blockquote {
+  border-left: 2px solid #cf957d !important;
+}
