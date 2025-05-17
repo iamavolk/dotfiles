@@ -1,7 +1,7 @@
-alias l='eza -lbS --git'
-alias la='l -a'
-alias ll='eza -aablGS'
-alias lt='eza -blT --no-user --no-time --no-permissions'
+alias l='eza -lbS --git --group-directories-first'
+alias la='l -a --group-directories-first'
+alias ll='eza -aablGS --group-directories-first'
+alias lt='eza -blT --no-user --no-time --no-permissions --group-directories-first'
 
 alias gs='git status'
 alias ga='git add'
