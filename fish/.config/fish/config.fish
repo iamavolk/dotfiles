@@ -24,11 +24,9 @@ set -Ux LESS_TERMCAP_so \e\[01\x3B33m
 set -Ux LESS_TERMCAP_ue \e\[0m
 set -Ux LESS_TERMCAP_us \e\[1\x3B4\x3B31m
 
-source ~/dotfiles/fish/aux.fish
-
 function gdrive
     set action $argv[1]
-    set mnt_pnt "/home/ke314/gdrive"
+    set mnt_pnt $HOME/gdrive
     set remote_drive "gdrive:"
 
     switch $action
@@ -46,6 +44,3 @@ set -Ux SUDO_EDITOR vi
 
 neofetch
 ncal -b3
-
-xmodmap -e "keycode 107 = BackSpace"
-xmodmap -e "keycode 22 = NoSymbol"

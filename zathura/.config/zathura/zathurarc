@@ -7,7 +7,8 @@ set recolor-keephue     true
 
 # Canvas colors
 set recolor-lightcolor "#bda99b"
-set recolor-darkcolor "#3c3830"
+# set recolor-darkcolor "#3c3830"
+set recolor-darkcolor "#211f1b"
 
 # Status Line colors
 # set statusbar-fg "#bda99b"
