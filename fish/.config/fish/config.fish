@@ -8,6 +8,8 @@ alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 
+alias ed='vi'
+	
 set -U fish_greeting
 set fish_prompt_pwd_dir_length 0
 
