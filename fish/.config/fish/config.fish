@@ -1,5 +1,5 @@
 alias l='eza -lbS --git --group-directories-first'
-alias la='l -a --group-directories-first'
+alias la='l -a'
 alias ll='eza -aablGS --group-directories-first'
 alias lt='eza -blT --no-user --no-time --no-permissions --group-directories-first'
 
@@ -10,21 +10,11 @@ alias gd='git diff'
 
 alias ed='vi'
 	
-set -U fish_greeting
 set fish_prompt_pwd_dir_length 0
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
-# less colors and format
-set -Ux LESS_TERMCAP_mb \e\[1\x3B32m
-set -Ux LESS_TERMCAP_md \e\[1\x3B32m
-set -Ux LESS_TERMCAP_me \e\[0m
-set -Ux LESS_TERMCAP_se \e\[0m
-set -Ux LESS_TERMCAP_so \e\[01\x3B33m
-set -Ux LESS_TERMCAP_ue \e\[0m
-set -Ux LESS_TERMCAP_us \e\[1\x3B4\x3B31m
 
 function gdrive
     set action $argv[1]
@@ -38,11 +28,6 @@ function gdrive
             fusermount -u "$mnt_pnt"
     end
 end
-
-set -gx MANWIDTH 79
-set -Ux BAT_THEME base16
-set -Ux EDITOR vi
-set -Ux SUDO_EDITOR vi
 
 neofetch
 ncal -b3
