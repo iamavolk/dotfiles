@@ -26,8 +26,8 @@ set index-bg "#242933"
 set index-active-bg "#3b4252"
 set index-active-fg "#c3c3c3"
 
-map h navigate next
-map a navigate previous
+map <C-h> navigate next
+map <C-a> navigate previous
 
 map [index] y navigate_index collapse
 map [index] e navigate_index expand
