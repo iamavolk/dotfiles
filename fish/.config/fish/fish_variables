@@ -9,11 +9,11 @@ SETUVAR --export LESS_TERMCAP_se:\x1b\x5b0m
 SETUVAR --export LESS_TERMCAP_so:\x1b\x5b01\x3b33m
 SETUVAR --export LESS_TERMCAP_ue:\x1b\x5b0m
 SETUVAR --export LESS_TERMCAP_us:\x1b\x5b1\x3b4\x3b31m
-SETUVAR --export MANPAGER:less\x20\x2dR
+SETUVAR --export MANPAGER:less\x20\x2dN
 SETUVAR --export MANROFFOPT:\x2dc
 SETUVAR --export MANWIDTH:79
 SETUVAR --export SUDO_EDITOR:vi
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
