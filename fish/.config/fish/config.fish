@@ -2,6 +2,7 @@ alias l='eza -lbS --git --group-directories-first'
 alias la='l -a'
 alias ll='eza -aablGS --group-directories-first'
 alias lt='eza -blT --no-user --no-time --no-permissions --group-directories-first'
+alias ls='eza -a --group-directories-first'
 
 alias gs='git status'
 alias ga='git add'
@@ -28,6 +29,8 @@ function gdrive
             fusermount -u "$mnt_pnt"
     end
 end
+
+set -x GOOGLE_CLOUD_PROJECT "gemini-cli-test0"
 
 neofetch
 ncal -b3
