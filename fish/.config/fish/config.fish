@@ -10,7 +10,8 @@ alias gc='git commit'
 alias gd='git diff'
 
 alias ed='vi'
-	
+alias avim='vi -n -u NONE -i NONE -N -c "set noswapfile nobackup nowritebackup noundofile"'
+
 set fish_prompt_pwd_dir_length 0
 
 if status is-interactive
