@@ -58,10 +58,9 @@ y = 0
 
 [keyboard]
 bindings = [
-    { key = "-", mods = "Control", action = "None" },
-    { key = "q", mods = "Alt", action = "DecreaseFontSize" },
-    { key = "x", mods = "Alt", action = "IncreaseFontSize" },
-    { key = "m", mods = "Alt", action = "ResetFontSize" },
+    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    { key = "+", mods = "Control | Shift", action = "IncreaseFontSize" },
+    { key = "-", mods = "Alt", action = "ResetFontSize" },
 ]
 
 [selection]
