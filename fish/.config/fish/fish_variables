@@ -13,7 +13,7 @@ SETUVAR --export MANPAGER:less\x20\x2dN
 SETUVAR --export MANROFFOPT:\x2dc
 SETUVAR --export MANWIDTH:79
 SETUVAR --export SUDO_EDITOR:nvim
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue

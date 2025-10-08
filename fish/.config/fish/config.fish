@@ -10,7 +10,8 @@ alias gc='git commit'
 alias gd='git diff'
 
 alias avim='nvim -n -u NONE -i NONE -N -c "set noswapfile nobackup nowritebackup noundofile"'
-alias nvim12='NVIM_APPNAME=nvim-12 nvim'
+alias vi='nvim'
+alias iv='NVIM_APPNAME=nvim-12 nvim'
 
 set fish_prompt_pwd_dir_length 0
 
@@ -37,4 +38,3 @@ if not contains "$HOME/.local/share/bob/nvim-bin/" $PATH
     set -x PATH "$HOME/.local/share/bob/nvim-bin/" $PATH
 end
 
-neofetch
