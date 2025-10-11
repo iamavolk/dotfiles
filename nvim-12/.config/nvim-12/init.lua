@@ -10,6 +10,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.conceallevel = 0
 vim.o.confirm = true
 vim.o.cursorline = true
+vim.o.foldcolumn = "2"
 vim.o.ignorecase = true
 vim.o.number = true
 vim.o.shiftwidth = 4
@@ -43,6 +44,7 @@ vim.keymap.set('n', '<C-w><S-Up>', '<C-w>K', { desc = 'Move Up' })
 vim.keymap.set('n', '<A-l>', 'L', { desc = '' })
 vim.keymap.set('n', '<A-h>', 'H', { desc = '' })
 vim.keymap.set('n', '<A-m>', 'M', { desc = '' })
+vim.keymap.set('n', '<A-g>', 'G', { desc = '' })
 
 
 ------------------------------------------------------
