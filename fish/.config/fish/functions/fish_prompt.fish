@@ -1,6 +1,6 @@
 set -g __fish_git_prompt_showdirtystate 'yes'
 set -g __fish_git_prompt_char_dirtystate '✗'
-set -g __fish_git_prompt_char_cleanstate '✔'
+set -g __fish_git_prompt_char_cleanstate ' ✔'
 
 function fish_prompt
     if not set -q VIRTUAL_ENV_DISABLE_PROMPT
