@@ -19,22 +19,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-function gdrive
-    set action $argv[1]
-    set mnt_pnt $HOME/gdrive
-    set remote_drive "gdrive:"
-
-    switch $action
-        case "mount"
-            rclone mount "$remote_drive" "$mnt_pnt" &
-        case "umount"
-            fusermount -u "$mnt_pnt"
-    end
-end
-
 set -x GOOGLE_CLOUD_PROJECT "gemini-cli-test0"
 
-if not contains "$HOME/.local/share/bob/nvim-bin/" $PATH
-    set -x PATH "$HOME/.local/share/bob/nvim-bin/" $PATH
-end
-
+fastfetch

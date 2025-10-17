@@ -1,8 +1,11 @@
+machine codename: charon
+
+# Points of interest:
 ## GNU Stow
 
-#### How to stow somewhere other than `$HOME`:
+### how to stow somewhere other than `$HOME`:
 > `sudo stow -t / <source dir>`
+> `-t` flag sets the target dir
 
-#### md_css:
-> the contents of this file are not used by GNU Stow
-> the text is intended to be used verbatim in the Markdown Reader chromium plugin
+## md_css:
+> the source code is intended to be used verbatim in the Markdown Reader chromium plugin
