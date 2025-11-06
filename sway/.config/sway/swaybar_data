@@ -1,0 +1,28 @@
+#!/bin/env bash
+
+trap "get_machine_info" SIGUSR1
+
+get_machine_info ()
+{
+    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o '[0-9]*%' | head -n 1)
+    pdt_time=$(date +"%H:%M %b %d")
+    msq_time=$(TZ='Europe/Minsk' date +"%R")
+    battery_percent=$(upower -d | grep percentage | head -1 | awk '{print $2}')
+    mem=$(awk '/MemAvailable/ {printf "%.2f GiB\n", $2/1024/1024}' /proc/meminfo)
+
+    mute=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
+    # mic="testmic"
+    if [[ $mute == "yes" ]]; then
+        mic="mute"
+    else
+        mic=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -o '[0-9]*%' | head -n 1)
+    fi
+}
+
+
+while true; do
+    get_machine_info
+    echo "mem:$mem   mic:$mic   vol:$volume   bat:$battery_percent   $pdt_time / $msq_time"
+    sleep 60 &
+    wait $!
+done
