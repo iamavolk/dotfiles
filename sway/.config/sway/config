@@ -1,6 +1,7 @@
 # ==================================
-#       V riables
+#       Variables
 # ==================================
+
 
 set $mod    Mod4
 set $meta   Mod1
@@ -14,18 +15,35 @@ set $term     alacritty
 set $browser  brave-browser
 set $menu     wmenu-run
 
-client.focused          #1F1F1F #556064 #80FFF9 #1F1F1F
+
+
+# ==================================
+#       Views / Containers
+# ==================================
+
+# client.<class>          <border> <background> <text> [<indicator> [<child border>]]
+#
+# 'border', 'background', and 'text' pertain to the title bar of the view
+# 'indicator' is the color of the indended direction of the nascent view
+# 'child border' is the color of the view itself
+#
+# when omitted 'indicator' will use a sane default and 'child border' will use
+# the color set for 'background'
+
+client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #686868
 # client.focused          #2F2F2F50 #556064 #80FFF9 #1F1F1F00 #00000000
-# client.focused_inactive #2F3D4400 #2F3D44 #1ABC9C #45494800 #00000000
+client.focused_inactive #2F3D4400 #2F3D44 #1ABC9C #45494800 #00000000
 # client.unfocused        #0F0F0F00 #2F3D44 #1ABC9C #45494800 #00000000
 # client.urgent           #CB4B1600 #FDF6E3 #1ABC9C #268BD200 #00000000
-# client.placeholder      #00000000 #0c0c0c #ffffff #00000000 #00000000
+
+default_border pixel 2
+default_floating_border pixel 1
+gaps inner 3
+gaps outer 0
 
 focus_follows_mouse no
-default_border pixel 2
-# default_floating_border normal
-gaps inner 2
-gaps outer 0
+seat seat0 hide_cursor 3000
+
 for_window [class="Pqiv"] floating enable
 
 
@@ -75,153 +93,136 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-seat seat0 hide_cursor 3000
 ### Toucpad pointer
 input type:touchpad {
     tap enabled
     dwt enabled
+    natural_scroll enabled
     pointer_accel 1
     accel_profile flat
 }
 
 ### Mouse pointer
 # input type:pointer {
+#     dwt enabled
 # }
 
 # ==================================
 #        Key bindings
 # ==================================
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
-    # Start a browser
-    bindsym $mod+Shift+Return exec $browser
 
-    # Kill focused window
-    bindsym $mod+Shift+j kill
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $browser
+bindsym $mod+Shift+j kill
+bindsym $mod+d exec $menu
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+bindsym $meta+Shift+r reload
 
-    # Reload the configuration file
-    # bindsym $mod+Shift+c reload
-    bindsym $meta+Shift+r reload
-
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+q exec swaynag -t warning -m \
-    'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+bindsym $mod+Shift+q exec swaynag -t warning -m \
+    'Exit will end Wayland session. Confirm?' \
     -B 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
 
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+# ==================================
+#       Moving around
+# ==================================
 
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-#
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+
+# ==================================
 # Workspaces:
-#
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+# ==================================
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+t layout tabbed
-    bindsym $mod+p layout toggle split
-
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    # bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+plus scratchpad show
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
 
 
+# ==================================
+#     Layout
+# ==================================
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+p layout toggle split
+
+bindsym $mod+f fullscreen
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+# bindsym $mod+a focus parent
+
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+plus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+r mode "resize"
 
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 20px
     bindsym $down resize grow height 20px
     bindsym $up resize shrink height 20px
     bindsym $right resize grow width 20px
 
-    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
@@ -232,7 +233,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
 bindsym $meta+r exec pkill -SIGUSR1 -f swaybar_data
 
 # Special keys to adjust volume via PulseAudio
