@@ -251,6 +251,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # bindsym Print exec grim
+bindsym $meta+Shift+Return exec swaymsg "output * power on"
+bindsym $meta+Return exec swaymsg "output * dpms on"
 
 
 
