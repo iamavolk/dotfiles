@@ -23,3 +23,6 @@ set fish_prompt_pwd_dir_length 0
 if status is-interactive
     fastfetch
 end
+
+bind alt-l 'commandline -r "l"; commandline -f execute'
+zoxide init --cmd cd fish | source
