@@ -1,0 +1,64 @@
+filekinds:
+  directory:
+    foreground: "#a396d3"
+    # foreground: Purple
+    is_bold: true
+    is_dimmed: false
+  symlink:
+    foreground: Cyan
+    is_italic: true
+  executable:
+    foreground: "#a9d88c"
+    is_bold: true
+
+perms:
+  user_read:
+    foreground: Yellow
+    is_dimmed: false
+  user_write:
+    foreground: Red
+    is_dimmed: false
+  user_execute_file:
+    foreground: White
+  user_execute_other:
+    foreground: White
+    is_dimmed: true
+  group_execute:
+    foreground: White
+    is_dimmed: true
+  other_execute:
+    foreground: White
+    is_dimmed: true
+
+date:
+  foreground: Default
+  is_dimmed: true
+
+users:
+  user_you:
+    foreground: "#9d99aa"
+    is_bold: true
+    is_dimmed: true
+  user_root:
+    foreground: "#e0d1c7"
+
+file_type:
+  source:
+    foreground: "#edce9a"
+  image:
+    foreground: "#d5cbd6"
+  document:
+    foreground: "#a396d3"
+
+size:
+  number_byte:
+    foreground: Purple
+  number_kilo:
+    foreground: Purple
+    is_bold: false
+  unit_kilo:
+    foreground: Purple
+    is_bold: true
+  unit_mega:
+    foreground: Yellow
+    is_bold: true
