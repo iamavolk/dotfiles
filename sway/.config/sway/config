@@ -45,7 +45,12 @@ gaps outer 0
 focus_follows_mouse no
 seat seat0 hide_cursor 3000
 
+# XWayland
+for_window [class="x2goclient"] floating enable
 for_window [class="Pqiv"] floating enable
+
+# native
+for_window [app_id="localsend_app"] floating enable
 
 
 # ==================================
