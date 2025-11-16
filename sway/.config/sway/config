@@ -13,7 +13,8 @@ set $right  e
 
 set $term     alacritty
 set $browser  brave-browser
-set $menu     wmenu-run
+# set $menu     wmenu-run
+set $menu tofi-drun
 
 
 
