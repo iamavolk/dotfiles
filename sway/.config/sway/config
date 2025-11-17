@@ -286,7 +286,8 @@ bar {
         urgent_workspace   #00000033 #00000033 #ff0000
     }
 
-    font "Liberation Mono" 11
+    # font "Liberation Mono" 11
+    font "DepartureMono Nerd Font Mono" 11
 }
 
 include /etc/sway/config.d/*
