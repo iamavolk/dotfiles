@@ -81,7 +81,7 @@ font = "DepartureMono Nerd Font Mono"
 	placeholder-background-corner-radius = 0
 
 	# Input text theme
-	# input-color = #FFFFFF
+	input-color = #FFFFFF50
 	input-background = #00000000
 	input-background-padding = 0
 	input-background-corner-radius = 0
