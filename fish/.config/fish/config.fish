@@ -25,5 +25,7 @@ if status is-interactive
 end
 
 bind alt-l 'commandline -r "l"; commandline -f execute'
+
 zoxide init --cmd cd fish | source
 fzf --fish | source
+source $HOME/.local/share/bob/env/env.fish
