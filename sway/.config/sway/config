@@ -50,7 +50,7 @@ for_window [class="Pqiv"] floating enable
 
 # native
 for_window [app_id="localsend_app"] floating enable
-for_window [app_id="bluetui_app"] floating enable, resize set width 1200 px height 800 px
+for_window [app_id="bluetui_app"] floating enable, resize set width 1000 px height 600 px
 for_window [app_id="pulsemixer_app"] floating enable, resize set width 1200 px height 500 px
 
 
