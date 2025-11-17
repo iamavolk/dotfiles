@@ -13,9 +13,7 @@ set $right  e
 
 set $term     alacritty
 set $browser  brave-browser
-# set $menu     wmenu-run
-set $menu tofi-drun
-
+set $menu     tofi-drun
 
 
 # ==================================
@@ -32,13 +30,13 @@ set $menu tofi-drun
 # the color set for 'background'
 
 client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #686868
-# client.focused          #2F2F2F50 #556064 #80FFF9 #1F1F1F00 #00000000
 client.focused_inactive #2F3D4400 #2F3D44 #1ABC9C #45494800 #00000000
 # client.unfocused        #0F0F0F00 #2F3D44 #1ABC9C #45494800 #00000000
 # client.urgent           #CB4B1600 #FDF6E3 #1ABC9C #268BD200 #00000000
 
 default_border pixel 2
 default_floating_border pixel 1
+
 gaps inner 3
 gaps outer 0
 
@@ -51,6 +49,8 @@ for_window [class="Pqiv"] floating enable
 
 # native
 for_window [app_id="localsend_app"] floating enable
+for_window [app_id="bluetui_app"] floating enable, resize set width 1200 px height 800 px
+for_window [app_id="pulsemixer_app"] floating enable, resize set width 1200 px height 500 px
 
 
 # ==================================
@@ -260,6 +260,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym $meta+Shift+Return exec swaymsg "output * power on"
 bindsym $meta+Return exec swaymsg "output * dpms on"
 
+bindsym Print exec swaylock -f -c 000000
 
 
 # ==================================
