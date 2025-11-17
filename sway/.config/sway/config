@@ -5,6 +5,7 @@
 
 set $mod    Mod4
 set $meta   Mod1
+set $ctrl   Control
 
 set $left   y
 set $down   h
@@ -120,7 +121,7 @@ input type:touchpad {
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $browser
 bindsym $mod+Shift+j kill
-bindsym $mod+d exec $menu
+bindsym $mod+j exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -205,6 +206,11 @@ bindsym $mod+p layout toggle split
 
 bindsym $mod+f fullscreen
 
+# embedded keyboard
+bindsym $mod+backspace focus mode_toggle
+bindsym $ctrl+Return floating toggle
+
+# external keyboard
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
@@ -287,7 +293,6 @@ bar {
         urgent_workspace   #00000033 #00000033 #ff0000
     }
 
-    # font "Liberation Mono" 11
     font "DepartureMono Nerd Font Mono" 11
 }
 
