@@ -26,3 +26,4 @@ end
 
 bind alt-l 'commandline -r "l"; commandline -f execute'
 zoxide init --cmd cd fish | source
+fzf --fish | source
