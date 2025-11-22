@@ -7,10 +7,10 @@ set $mod    Mod4
 set $meta   Mod1
 set $ctrl   Control
 
-set $left   y
-set $down   h
-set $up     a
-set $right  e
+set $left   h
+set $down   a
+set $up     e
+set $right  i
 
 set $term     alacritty
 set $browser  brave-browser
