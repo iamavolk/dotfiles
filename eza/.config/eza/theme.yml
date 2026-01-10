@@ -48,7 +48,8 @@ file_type:
   image:
     foreground: "#d5cbd6"
   document:
-    foreground: "#a396d3"
+    # foreground: "#a396d3"
+    foreground: Purple
 
 size:
   number_byte:
