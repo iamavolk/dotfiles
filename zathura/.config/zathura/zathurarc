@@ -26,13 +26,20 @@ set index-bg "#242933"
 set index-active-bg "#3b4252"
 set index-active-fg "#c3c3c3"
 
-map <C-h> navigate next
-map <C-a> navigate previous
+# map <C-a> navigate next
+# map <C-e> navigate previous
+map <C-a> adjust_window best-fit
+map <C--> zoom in
 
-map [index] y navigate_index collapse
-map [index] e navigate_index expand
-map [index] h navigate_index down
-map [index] a navigate_index up
+map a navigate next
+map e navigate previous
+map h scroll down
+map i scroll up
 
-map [index] <C-e> navigate_index expand-all
-map [index] <C-y> navigate_index collapse-all
+map [index] i navigate_index expand
+map [index] h navigate_index collapse
+map [index] a navigate_index down
+map [index] e navigate_index up
+
+map [index] <C-i> navigate_index expand-all
+map [index] <C-h> navigate_index collapse-all
