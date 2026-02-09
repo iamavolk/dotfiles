@@ -13,9 +13,7 @@ set $up     e
 set $right  i
 
 set $term     alacritty
-set $browser  brave-browser
 set $menu     tofi-drun
-
 
 # ==================================
 #       Views / Containers
@@ -37,8 +35,9 @@ client.focused_inactive #2F3D4400 #2F3D44 #1ABC9C #45494800 #00000000
 
 default_border pixel 2
 default_floating_border pixel 1
+smart_borders on
 
-gaps inner 3
+gaps inner 2
 gaps outer 0
 
 focus_follows_mouse no
@@ -49,13 +48,13 @@ for_window [class="x2goclient"] floating enable
 for_window [class="Pqiv"] floating enable
 
 # native
-for_window [app_id="localsend_app"] floating enable
 for_window [app_id="bluetui_app"] floating enable, resize set width 1000 px height 600 px
 for_window [app_id="pulsemixer_app"] floating enable, resize set width 1200 px height 500 px
+# for_window [app_id="brave"] floating enable, resize set width 800 px height 600 px
 
 
 # ==================================
-#      Output configuration
+#      Display configuration
 # ==================================
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -68,27 +67,40 @@ for_window [app_id="pulsemixer_app"] floating enable, resize set width 1200 px h
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+#   swaymsg -t get_outputs
+#
+#
+#     .-------. .---------------. .-------.
+#     \       \ \               \ \       \
+#     \       \ \    Center     \ \       \
+#     \ Left  \ \               \ \ Right \
+#     \       \ *---------------* \       \
+#     \       \   .-----------.   \       \
+#     \       \   \  Bottom   \   \       \
+#     \       \   \           \   \       \
+#     *-------*   *-----------*   *-------*
+#
+#
+# ==========  Left ========================
+    output 'Dell Inc. DELL U2515H 9X2VY69U06TL' {
+        pos -1440 0
+        transform 270
+    }
+# ==========  Center ======================
+    output 'Dell Inc. DELL U2719DC H6VMT13' {
+        pos 0 0
+    }
+# ==========  Bottom ======================
+    output 'Dell Inc. DELL P2219H CW0K8W2' {
+        pos 340 1440
+    }
+# ==========  Right =======================
+    output 'Dell Inc. DELL U2518D 3C4YP9CBA4EL' {
+        pos 2560 0
+        transform 270
+    }
 
-output DP-7 {
-    pos 0 -780
-    mode 1920x1080@60Hz
-    scale 1
-    transform 270
-}
-
-output eDP-1 {
-    pos 1080 0
-    mode 1920x1080@60Hz
-    scale 1
-}
-
-output DP-3 {
-    pos 3000 -780
-    mode 1920x1080@60Hz
-    scale 1
-    transform 90
-}
+output * bg $HOME/Downloads/sunset.jpg fill
 
 
 # ==================================
@@ -99,10 +111,9 @@ output DP-3 {
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 450 'swaylock -f -c 000000' \
+         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
-
 
 
 # ==================================
@@ -151,10 +162,6 @@ floating_modifier $mod normal
 
 bindsym $meta+Shift+r reload
 
-bindsym $mod+Shift+q exec swaynag -t warning -m \
-    'Exit will end Wayland session. Confirm?' \
-    -B 'Yes, exit sway' 'swaymsg exit'
-
 # ==================================
 #       Moving around
 # ==================================
@@ -170,10 +177,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+$left move left 512 px
+bindsym $mod+Shift+$down move down 512 px
+bindsym $mod+Shift+$up move up 512 px
+bindsym $mod+Shift+$right move right 512 px
 
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -293,7 +300,9 @@ bindsym Print exec swaylock -f -c 000000
 # ==================================
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    id 1
     position top
+    output 'Dell Inc. DELL U2719DC H6VMT13'
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -302,18 +311,41 @@ bar {
     status_command $HOME/.config/sway/swaybar_data
 
     colors {
-        height 24
+        height 20
         statusline #aaaaaa
         background #00000010
 
-        focused_workspace  #00000033 #00000033 #ffffff
+        focused_workspace  #000000ff #ebd5b9aa #000000
         active_workspace   #00000033 #00000033 #aaaaaa
         inactive_workspace #00000033 #00000033 #999999
         urgent_workspace   #00000033 #00000033 #ff0000
     }
 
-    font "DepartureMono Nerd Font Mono" 11
+    font "UbuntuMono Nerd Font Mono" 12
+}
+
+bar {
+    id 2
+    position top
+    output 'Dell Inc. DELL U2515H 9X2VY69U06TL'
+    output 'Dell Inc. DELL P2219H CW0K8W2'
+    output 'Dell Inc. DELL U2518D 3C4YP9CBA4EL'
+
+    colors {
+        height 20
+        statusline #aaaaaa
+        background #00000010
+
+        focused_workspace  #000000ff #ebd5b9aa #000000
+        active_workspace   #00000033 #00000033 #aaaaaa
+        inactive_workspace #00000033 #00000033 #999999
+        urgent_workspace   #00000033 #00000033 #ff0000
+    }
+    font "UbuntuMono Nerd Font Mono" 12
 }
 
 include /etc/sway/config.d/*
 include $HOME/.config/sway/local/*
+
+# Disable eDP in clamshell mode
+exec_always bash -c 'sleep 2 && grep -q "closed" /proc/acpi/button/lid/LID/state && swaymsg output eDP-1 disable'
