@@ -69,7 +69,7 @@ font = "DepartureMono Nerd Font Mono"
 	#     Radius of background box corners in pixels
 
 	# Prompt text theme
-	prompt-color = #21312
+	prompt-color = #213120
 	prompt-background = #000000
 	prompt-background-padding = 0
 	prompt-background-corner-radius = 0
