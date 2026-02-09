@@ -59,8 +59,10 @@ y = 0
 [keyboard]
 bindings = [
     { key = "-", mods = "Control", action = "DecreaseFontSize" },
-    { key = "+", mods = "Control | Shift", action = "IncreaseFontSize" },
-    { key = "-", mods = "Alt", action = "ResetFontSize" },
+    { key = "+", mods = "Control | Shift", action = "ResetFontSize" },
+    { key = "-", mods = "Alt", action = "IncreaseFontSize" },
+    { key = "p", mods = "Control | Shift", action = "Paste" },
+    { key = "y", mods = "Control | Shift", action = "Copy" },
 ]
 
 [selection]
@@ -70,4 +72,4 @@ save_to_clipboard = true
 program = "/usr/bin/fish"
 
 [window]
-opacity = 0.90
+opacity = 0.8
