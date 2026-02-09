@@ -36,11 +36,18 @@ date:
 
 users:
   user_you:
-    foreground: "#9d99aa"
-    is_bold: true
+    foreground: "#e0d1c7"
     is_dimmed: true
+    is_bold: false
   user_root:
     foreground: "#e0d1c7"
+  group_yours:
+    foreground: "#9d99aa"
+    is_dimmed: true
+    is_bold: true
+  group_root:
+    is_dimmed: true
+    is_bold: true
 
 file_type:
   source:
