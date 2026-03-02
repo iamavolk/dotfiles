@@ -28,7 +28,9 @@ set $menu     tofi-drun
 # when omitted 'indicator' will use a sane default and 'child border' will use
 # the color set for 'background'
 
-client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #686868
+# client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #686868
+# client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #c4746e75
+client.focused          #2F1F1F #556064 #80FFF9 #1F1F1F #a292a385
 client.focused_inactive #2F3D4400 #2F3D44 #1ABC9C #45494800 #00000000
 # client.unfocused        #0F0F0F00 #2F3D44 #1ABC9C #45494800 #00000000
 # client.urgent           #CB4B1600 #FDF6E3 #1ABC9C #268BD200 #00000000
@@ -100,7 +102,7 @@ for_window [app_id="pulsemixer_app"] floating enable, resize set width 1200 px h
         transform 270
     }
 
-output * bg $HOME/Downloads/sunset.jpg fill
+output * bg $HOME/downloads/sunset.jpg fill
 
 
 # ==================================
@@ -233,8 +235,8 @@ bindsym $mod+p layout toggle split
 bindsym $mod+f fullscreen
 
 # embedded keyboard
-bindsym $mod+backspace focus mode_toggle
-bindsym $ctrl+Return floating toggle
+bindsym $mod+Escape focus mode_toggle
+bindsym $mod+y floating toggle
 
 # external keyboard
 bindsym $mod+Shift+space floating toggle
