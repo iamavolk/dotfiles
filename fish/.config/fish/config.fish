@@ -18,6 +18,8 @@ alias gc='git commit'
 alias gd='git diff'
 alias gs='git status'
 
+alias lg='lazygit'
+alias hx='helix'
 alias vi='nvim'
 alias iv='NVIM_APPNAME=nvim-12 nvim'
 alias avim='nvim -n -u NONE -i NONE \
