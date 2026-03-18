@@ -58,6 +58,8 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/fish/config.fish".source = ./fish/.config/fish/config.fish;
+    ".config/yazi".source = ./yazi/.config/yazi;
+    ".config/eza".source = ./eza/.config/eza;
 
   };
 
