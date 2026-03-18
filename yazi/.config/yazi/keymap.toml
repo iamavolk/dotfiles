@@ -1,0 +1,19 @@
+[[mgr.prepend_keymap]]
+on = "<C-e>"
+run = "seek 5"
+desc = "Preview 5 lines down"
+
+[[mgr.prepend_keymap]]
+on = "<C-y>"
+run = "seek -5"
+desc = "Preview 5 lines up"
+
+[[mgr.prepend_keymap]]
+on   = "f"
+run  = "plugin jump-to-char"
+desc = "Jump to char"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "n" ]
+run = "cd ~/.config/nvim"
+desc = "Goto ~/.config/nvim"

@@ -1,0 +1,17 @@
+[mgr]
+ratio = [1, 2, 5]
+linemode = "size"
+show_hidden = true
+
+[opener]
+edit = [
+    { run = "$EDITOR %s", block = true },
+    { run = "alacritty -e nvim %s", block = false }
+]
+
+[open]
+prepend_rules = [
+    { mime = "application/octet-stream", use = "edit" },
+    { mime = "application/pie-executable", use = "edit" },
+    { url = "*.lua", use = "edit" }
+]
