@@ -12,7 +12,8 @@ set $down   a
 set $up     e
 set $right  i
 
-set $term     alacritty
+set $a_term   alacritty
+set $b_term   ghostty
 set $menu     tofi-drun
 
 # ==================================
@@ -150,8 +151,8 @@ input type:touchpad {
 #        Key bindings
 # ==================================
 
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $browser
+bindsym $mod+Return exec $a_term
+bindsym $mod+Shift+Return exec $b_term
 bindsym $mod+Shift+j kill
 bindsym $mod+j exec $menu
 
