@@ -27,9 +27,9 @@
 
 adjust-cell-height          = +1
 background                  = #1f1f28
-background-image            = ~/notes/Assets/chip_packages.png
+background-image            = ~/downloads/mandelbrot_fractal.jpg
 background-image-fit        = none
-background-image-opacity    = 0.03
+background-image-opacity    = 0.1
 command                     = /usr/bin/fish --login --interactive
 cursor-style                = block
 cursor-style-blink          = false
