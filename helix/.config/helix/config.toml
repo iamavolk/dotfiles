@@ -1,0 +1,18 @@
+theme = "term16_dark"
+
+[keys.normal]
+"C-j" = ":toggle line-number absolute relative"
+"C-q" = { "C-q" = ":q!" }
+"C-x" = { "C-s" = ":w" }
+"g"   = { "i" = "goto_line_end" }
+
+[keys.insert]
+# "C-c" = "normal_mode"
+
+[editor]
+cursorline = true
+# whitespace.render = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
