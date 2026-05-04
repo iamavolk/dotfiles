@@ -295,7 +295,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym $meta+Shift+Return exec swaymsg "output * power on"
 bindsym $meta+Return exec swaymsg "output * dpms on"
 
-bindsym Print exec swaylock -f -c 000000
+# bindsym Print exec swaylock -f -c 000000
 
 
 # ==================================
@@ -306,6 +306,7 @@ bar {
     id 1
     position top
     output 'Dell Inc. DELL U2719DC H6VMT13'
+    output eDP-1
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
