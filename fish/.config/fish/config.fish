@@ -35,7 +35,10 @@ function y
     rm -f -- "$tmp"
 end
 
+bind alt-d 'cdi; commandline -f execute'
+bind alt-h 'cd ~; commandline -f execute'
 bind alt-l 'commandline -r "l"; commandline -f execute'
+bind alt-z 'fg; commandline -f execute'
 bind ctrl-y 'commandline y; commandline -f execute'
 
 zoxide init --cmd cd fish | source
