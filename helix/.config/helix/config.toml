@@ -16,3 +16,7 @@ cursorline = true
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
+
+[editor.indent-guides]
+render = true
+character = "┆"
