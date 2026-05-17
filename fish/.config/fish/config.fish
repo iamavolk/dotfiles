@@ -37,7 +37,9 @@ end
 
 bind alt-d 'cdi; commandline -f execute'
 bind alt-h 'cd ~; commandline -f execute'
+# bind alt-f 'fastfetch; commandline -f execute'
 bind alt-l 'commandline -r "l"; commandline -f execute'
+bind alt-v 'nvim; commandline -f execute'
 bind alt-z 'fg; commandline -f execute'
 bind ctrl-y 'commandline y; commandline -f execute'
 
@@ -46,3 +48,13 @@ fzf --fish | source
 # source $HOME/.local/share/bob/env/env.fish
 
 alias vitest='NVIM_APPNAME=nvim-test nvim'
+
+# Newer syntax above doesn't work as intended
+# Hence, the older version to make sure life
+# isn't painful on slow moving RHEL/Rocky/Alma
+
+# function _exec_l_cmd
+#     commandline -r "l"
+#     commandline -f execute
+# end
+# bind \el '_exec_l_cmd'
