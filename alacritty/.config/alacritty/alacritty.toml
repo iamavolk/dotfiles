@@ -68,6 +68,9 @@ bindings = [
 [selection]
 save_to_clipboard = true
 
+[terminal]
+osc52 = "CopyPaste"
+
 [terminal.shell]
 program = "/usr/bin/fish"
 
