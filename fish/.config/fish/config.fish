@@ -37,9 +37,10 @@ end
 
 bind alt-d 'cdi; commandline -f execute'
 bind alt-h 'cd ~; commandline -f execute'
-bind alt-l 'commandline -r "l"; commandline -f execute'
-bind alt-t 'commandline -r "tmux"; commandline -f execute'
 bind alt-j 'commandline -r "fastfetch"; commandline -f execute'
+bind alt-l 'commandline -r "l"; commandline -f execute'
+bind alt-m 'nvim -c "set filetype=markdown"; commandline -f execute'
+bind alt-t 'commandline -r "tmux"; commandline -f execute'
 bind alt-v 'nvim; commandline -f execute'
 bind alt-z 'fg; commandline -f execute'
 bind ctrl-y 'commandline y; commandline -f execute'
