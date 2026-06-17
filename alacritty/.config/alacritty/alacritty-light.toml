@@ -1,0 +1,111 @@
+[colors.primary]
+background = '#F2EEDE'
+foreground = '#000000'
+# dim_foreground = "#302b5d"
+# bright_foreground = "#643f61"
+
+[colors.normal]
+black   = '#000000'
+red     = '#CC3E28'
+green   = '#216609'
+yellow  = '#B58900'
+blue    = '#2F6AAD'
+magenta = '#5C21A5'
+cyan    = '#127571'
+white   = '#AAAAAA'
+
+[colors.bright]
+black   = '#555555'
+red     = '#CC3E28'
+green   = '#216609'
+yellow  = '#B58900'
+blue    = '#2F6AAD'
+magenta = '#5C21A5'
+cyan    = '#127571'
+white   = '#AAAAAA'
+
+[colors.cursor]
+text = "#3d2b5a"
+cursor = "#643f61"
+
+[colors.vi_mode_cursor]
+text = "#3d2b5a"
+cursor = "#287980"
+
+[colors.search.matches]
+foreground = "#3d2b5a"
+background = "#a4c1c2"
+
+[colors.search.focused_match]
+foreground = "#3d2b5a"
+background = "#396847"
+
+[colors.footer_bar]
+foreground = "#3d2b5a"
+background = "#d3c7bb"
+
+[colors.hints.start]
+foreground = "#3d2b5a"
+background = "#955f61"
+
+[colors.hints.end]
+foreground = "#3d2b5a"
+background = "#d3c7bb"
+
+[colors.selection]
+text = "#3d2b5a"
+background = "#e7d2be"
+
+[colors.dim]
+black = "#2d251f"
+red = "#8c1d28"
+green = "#30583c"
+yellow = "#924702"
+blue = "#223d90"
+magenta = "#5e2baf"
+cyan = "#22676d"
+white = "#cec6bf"
+
+[font]
+size = 12
+
+[font.bold]
+family = "UbuntuMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "UbuntuMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "UbuntuMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "UbuntuMono Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[keyboard]
+bindings = [
+    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    { key = "+", mods = "Control | Shift", action = "ResetFontSize" },
+    { key = "-", mods = "Alt", action = "IncreaseFontSize" },
+    { key = "p", mods = "Control | Shift", action = "Paste" },
+    { key = "y", mods = "Control | Shift", action = "Copy" },
+]
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+osc52 = "CopyPaste"
+
+[terminal.shell]
+program = "/usr/bin/fish"
+
+[window]
+opacity = 0.99
